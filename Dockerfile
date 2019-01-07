@@ -10,7 +10,6 @@ RUN apt-get update && apt-get install -y \
     sudo \
     git \
     vim \
-    build-essential \
     cmake \
     ccache && \
     apt-get clean && \
