@@ -20,5 +20,5 @@ if [ $machine = "Mac" ]
 then
 	docker run -it -v "$code_dir":/home/user/code c-dev-env bash
 else
-	docker run --user $(id -u) -it -v "$code_dir":/home/user/code c-dev-env bash
+	docker run --user user -it -v "$code_dir":/home/user/code c-dev-env bash
 fi

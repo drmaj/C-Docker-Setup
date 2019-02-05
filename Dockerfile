@@ -5,11 +5,14 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get install -y software-properties-common
 RUN apt-get update && apt-get install -y \
     build-essential \
+    gdb \
     curl \
     ca-certificates \
     sudo \
     git \
     vim \
+    mc \
+    nano \
     cmake \
     ccache && \
     apt-get clean && \
