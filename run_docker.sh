@@ -18,7 +18,7 @@ esac
 
 if [ $machine = "Mac" ]
 then
-	docker run -it -v "$code_dir":/home/user/code c-dev-env bash
+	docker run -it --security-opt seccomp=unconfined -p 5000:5000 -v "$code_dir":/home/user/code c-dev-env bash
 else
-	docker run --user user -it -v "$code_dir":/home/user/code c-dev-env bash
+	docker run --user user -it --security-opt seccomp=unconfined -p 5000:5000 -v "$code_dir":/home/user/code c-dev-env bash
 fi

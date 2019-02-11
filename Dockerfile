@@ -11,6 +11,12 @@ RUN apt-get update && apt-get install -y \
     sudo \
     git \
     vim \
+    python3 \
+    python3-dev \
+    python3-pip \
+    python3-setuptools \
+    python3-wheel \
+    libmysqlclient-dev \
     mc \
     nano \
     cmake \
@@ -18,6 +24,9 @@ RUN apt-get update && apt-get install -y \
     apt-get clean && \
     apt-get autoremove && \
     rm -rf /var/lib/apt/lists/*
+
+RUN sudo python3 -m pip install pip --upgrade
+RUN sudo python3 -m pip install gdbgui
 
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
@@ -31,4 +40,7 @@ RUN chmod 777 /home/user
 
 WORKDIR /home/user
 
-CMD ["/bin/bash"]
+COPY start.sh start.sh
+ENTRYPOINT ["./start.sh"]
+
+#CMD ["/bin/bash"]
