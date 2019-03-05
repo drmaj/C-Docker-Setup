@@ -3,6 +3,7 @@ FROM ubuntu:18.04
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && apt-get install -y software-properties-common
+RUN add-apt-repository universe
 RUN apt-get update && apt-get install -y \
     build-essential \
     gdb \
@@ -20,7 +21,9 @@ RUN apt-get update && apt-get install -y \
     mc \
     nano \
     cmake \
-    ccache && \
+    ccache \
+    libncurses5-dev \
+    libncursesw5-dev && \
     apt-get clean && \
     apt-get autoremove && \
     rm -rf /var/lib/apt/lists/*
