@@ -23,7 +23,8 @@ RUN apt-get update && apt-get install -y \
     cmake \
     ccache \
     libncurses5-dev \
-    libncursesw5-dev && \
+    libncursesw5-dev \
+    ffmpeg && \
     apt-get clean && \
     apt-get autoremove && \
     rm -rf /var/lib/apt/lists/*
